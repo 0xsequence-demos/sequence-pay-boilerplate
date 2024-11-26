@@ -8,7 +8,7 @@ type SaleConfiguration = {
 };
 
 export const saleConfig: SaleConfiguration = {
- 	// ERC-20 contract # NATIVE token sale: for the native token sale, you should use ethers.ZeroAddress.
+  // ERC-20 contract # NATIVE token sale: for the native token sale, you should use ethers.ZeroAddress.
   currencyAddress: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
   // NFT Contract
   nftTokenAddress: "0xdeb398f41ccd290ee5114df7e498cf04fac916cb",

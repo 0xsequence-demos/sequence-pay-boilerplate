@@ -1,6 +1,10 @@
 import CardButton from "../CardButton";
 
-const CheckoutWithSequencePay = ({ onClickSelectPayment } : any) => {
+const CheckoutWithSequencePay = ({
+  onClickSelectPayment,
+}: {
+  onClickSelectPayment: () => void;
+}) => {
   return (
     <CardButton
       title="Checkout with Sequence Pay"

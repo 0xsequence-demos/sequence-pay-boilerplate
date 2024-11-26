@@ -5,8 +5,8 @@ import TestCheckout from "./Checkout";
 const Tests = () => {
   return (
     <Box display="flex" flexDirection="column" gap="4">
-      <TestInventory/>
-      <TestCheckout/>
+      <TestInventory />
+      <TestCheckout />
     </Box>
   );
 };
