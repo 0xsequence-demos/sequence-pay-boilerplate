@@ -1,8 +1,6 @@
-# Sequence NFT Checkout Boilerplate
+# Sequence Pay Boilerplate
 
-## Coming Soon!
-
-Starter boilerplate using Sardine and leveraging ERC721 Sale Contracts
+Starter boilerplate for Sequence Pay, using Sardine and ERC721 Sale Contracts
 
 ## Quickstart
 
