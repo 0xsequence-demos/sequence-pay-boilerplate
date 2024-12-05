@@ -18,7 +18,7 @@ const Home = () => {
           Want to learn more? Read the{" "}
           <a
             href={
-              "https://docs.sequence.xyz/solutions/wallets/sequence-kit/overview/"
+              "https://docs.sequence.xyz/solutions/wallets/sequence-kit/checkout"
             }
             target="_blank"
             rel="noreferrer "
