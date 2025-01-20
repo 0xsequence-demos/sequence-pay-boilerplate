@@ -1,13 +1,13 @@
 import { useAccount } from "wagmi";
-import CheckoutWithSequencePay from "../../../CheckoutWithSequencePay";
 import {
   SelectPaymentSettings,
   useSelectPaymentModal,
 } from "@0xsequence/kit-checkout";
-import { saleConfig } from "../../../../../saleConfig";
+import { saleConfig } from "../../saleConfig";
 import { encodeFunctionData, toHex } from "viem";
+import { Button, Card } from "boilerplate-design-system";
 
-const TestCheckout = () => {
+export function Checkout() {
   const { address: recipientAddress } = useAccount();
   const { openSelectPaymentModal } = useSelectPaymentModal();
 
@@ -84,6 +84,29 @@ const TestCheckout = () => {
   return (
     <CheckoutWithSequencePay onClickSelectPayment={onClickSelectPayment} />
   );
-};
+}
 
-export default TestCheckout;
+const CheckoutWithSequencePay = ({
+  onClickSelectPayment,
+}: {
+  onClickSelectPayment: () => void;
+}) => {
+  return (
+    <Card className="flex flex-col gap-5 items-center p-6">
+      <div className="flex flex-col">
+        <h2 className="text-18 font-bold">Checkout with Sequence Pay</h2>
+
+        <p className="text-grey-100 text-15">
+          Purchase an NFT using various purchase methods
+        </p>
+      </div>
+      <Button
+        variant="primary"
+        variant-padding="comfortable"
+        onClick={onClickSelectPayment}
+      >
+        Open Checkout
+      </Button>
+    </Card>
+  );
+};
