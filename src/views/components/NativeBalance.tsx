@@ -42,5 +42,5 @@ export const useNativeBalance = (props: {
     return undefined;
   }
 
-  return balance || "loading...";
+  return balance || "-";
 };

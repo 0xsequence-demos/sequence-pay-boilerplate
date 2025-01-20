@@ -67,7 +67,6 @@ export function Checkout() {
       recipientAddress,
       currencyAddress: saleConfig.currencyAddress,
       collectionAddress: saleConfig.nftTokenAddress,
-      isDev: true,
       creditCardProviders: ["sardine"],
       copyrightText: "ⓒ2024 Sequence",
       onSuccess: (txnHash: string) => {
@@ -92,7 +91,7 @@ const CheckoutWithSequencePay = ({
   onClickSelectPayment: () => void;
 }) => {
   return (
-    <Card className="flex flex-col gap-5 items-center p-6">
+    <Card className="flex flex-col gap-5 items-center p-6 bg-white/10 border border-white/10 backdrop-blur-sm text-center">
       <div className="flex flex-col">
         <h2 className="text-18 font-bold">Checkout with Sequence Pay</h2>
 
