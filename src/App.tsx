@@ -1,4 +1,3 @@
-import Home from "./views/Home";
 import { getDefaultWaasConnectors, KitProvider } from "@0xsequence/kit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createConfig, http, WagmiProvider } from "wagmi";
@@ -7,10 +6,15 @@ import "@0xsequence/design-system/styles.css";
 import { KitCheckoutProvider } from "@0xsequence/kit-checkout";
 import { KitWalletProvider } from "@0xsequence/kit-wallet";
 import { saleConfig } from "./saleConfig";
+import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
+
+import { NotConnected } from "./views/NotConnected";
+import { Connected } from "./views/Connected";
+import { SequenceBoilerplate } from "boilerplate-design-system";
 
 const queryClient = new QueryClient();
 
-const App = () => {
+export default function Layout() {
   // Get your own keys on sequence.build
   const projectAccessKey = import.meta.env.VITE_PROJECT_ACCESS_KEY;
   const waasConfigKey = import.meta.env.VITE_WAAS_CONFIG_KEY;
@@ -55,13 +59,26 @@ const App = () => {
         <KitProvider config={kitConfig}>
           <KitCheckoutProvider>
             <KitWalletProvider>
-              <Home />
+              <App />
             </KitWalletProvider>
           </KitCheckoutProvider>
         </KitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );
-};
+}
 
-export default App;
+function App() {
+  const { isConnected } = useAccount();
+
+  return (
+    <SequenceBoilerplate
+      githubUrl="https://github.com/0xsequence-demos/sequence-pay-boilerplate"
+      wagmi={{ useAccount, useDisconnect, useSwitchChain }}
+      name="Sequence Pay"
+      description="Embedded Wallet"
+    >
+      {isConnected ? <Connected /> : <NotConnected />}
+    </SequenceBoilerplate>
+  );
+}

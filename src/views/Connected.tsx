@@ -1,7 +1,8 @@
 import { Group } from "boilerplate-design-system";
-import { Inventory } from "./Inventory";
-import { Checkout } from "./Checkout";
-export default function Connected() {
+import { Inventory } from "../components/Inventory";
+import { Checkout } from "../components/Checkout";
+
+export function Connected() {
   return (
     <div className="flex flex-col gap-8">
       <Group>
