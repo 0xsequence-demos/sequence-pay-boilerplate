@@ -3,7 +3,7 @@ import {
   SelectPaymentSettings,
   useSelectPaymentModal,
 } from "@0xsequence/kit-checkout";
-import { saleConfig } from "../../saleConfig";
+import { saleConfig } from "../saleConfig";
 import { encodeFunctionData, toHex } from "viem";
 import { Button, Card } from "boilerplate-design-system";
 
