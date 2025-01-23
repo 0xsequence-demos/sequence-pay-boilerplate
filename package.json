@@ -19,7 +19,7 @@
     "@0xsequence/kit-wallet": "^4.5.8",
     "@0xsequence/network": "^2.2.7",
     "@tanstack/react-query": "^5.64.2",
-    "boilerplate-design-system": "github:0xsequence-demos/boilerplate-design-system#08dfb9404fdaaa7fa80d55522f6552af4e811cd2",
+    "boilerplate-design-system": "github:0xsequence-demos/boilerplate-design-system#e0fab43cdedd4ad95b7393ca3eeae48c50092aef",
     "ethers": "6.13.2",
     "motion": "^12.0.1",
     "react": "^18.3.1",
