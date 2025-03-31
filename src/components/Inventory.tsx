@@ -1,4 +1,4 @@
-import { useOpenWalletModal } from "@0xsequence/kit-wallet";
+import { useOpenWalletModal } from "@0xsequence/wallet-widget";
 import { Button, Card } from "boilerplate-design-system";
 
 export function Inventory() {

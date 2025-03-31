@@ -1,10 +1,9 @@
-import { getDefaultWaasConnectors, KitProvider } from "@0xsequence/kit";
+import { getDefaultWaasConnectors, SequenceConnectProvider } from "@0xsequence/connect";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import chains from "./utils/chains";
-import "@0xsequence/design-system/styles.css";
-import { KitCheckoutProvider } from "@0xsequence/kit-checkout";
-import { KitWalletProvider } from "@0xsequence/kit-wallet";
+import { SequenceCheckoutProvider } from "@0xsequence/checkout";
+import { SequenceWalletProvider } from "@0xsequence/wallet-widget";
 import { saleConfig } from "./saleConfig";
 import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
 
@@ -56,13 +55,13 @@ export default function Layout() {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <KitProvider config={kitConfig}>
-          <KitCheckoutProvider>
-            <KitWalletProvider>
+        <SequenceConnectProvider config={kitConfig}>
+          <SequenceCheckoutProvider>
+            <SequenceWalletProvider>
               <App />
-            </KitWalletProvider>
-          </KitCheckoutProvider>
-        </KitProvider>
+            </SequenceWalletProvider>
+          </SequenceCheckoutProvider>
+        </SequenceConnectProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );
