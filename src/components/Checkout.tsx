@@ -2,7 +2,7 @@ import { useAccount } from "wagmi";
 import {
   SelectPaymentSettings,
   useSelectPaymentModal,
-} from "@0xsequence/kit-checkout";
+} from "@0xsequence/checkout";
 import { saleConfig } from "../saleConfig";
 import { encodeFunctionData, toHex } from "viem";
 import { Button, Card } from "boilerplate-design-system";
